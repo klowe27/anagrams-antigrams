@@ -11,6 +11,11 @@ class Words
     else
       "#{word_one} and #{word_two} are not anagrams"
     end
-    
+
   end
+
+  def word? (word_one_array, word_two_array)
+    vowels = ["a","e","i","o", "u", "y"]
+  end
+
 end

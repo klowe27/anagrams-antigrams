@@ -8,9 +8,14 @@ describe('Words#anagram') do
     expect(words.anagram('ruby', 'bury')).to(eq('ruby and bury are anagrams'))
   end
 
-  it('will account for the possibility that words may have different cases, but are still anagrams') do
+  it('will account for the possibility that words may have different cases but are still anagrams') do
     words = Words.new()
     expect(words.anagram('Tea', 'Eat')).to(eq('Tea and Eat are anagrams'))
+  end
+
+  it('will determine if inputs are words by checking to see if they contain vowels') do
+    words = Words.new()
+    expect(words.anagram('brwn', 'rnbw')).to(eq('You need to input actual words!'))
   end
 
 end
