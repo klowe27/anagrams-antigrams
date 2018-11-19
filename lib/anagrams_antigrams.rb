@@ -49,10 +49,9 @@ class Words
   end
 
   def remove_punctuation(phrase)
-    punctuation = [".","\,","!","\;",":","-","\(","\)","\'","\"","...", "\{","\}","\[","\]","?"]
-    phrase_array = phrase.split("")
-    phrase_without_punctuation = phrase_array.reject{ |letter| punctuation.include?(letter)}
-    phrase_without_punctuation.join.split(" ")
+    punctuation = [".","\,","!","\;",":","-","\(","\)","\'","\"","...","\{","\}","\[","\]","?"]
+    phrase_no_punctuation = phrase.split("").reject{ |letter| punctuation.include?(letter)}
+    phrase_no_punctuation.join.split(" ")
   end
 
   def remove_space(phrase)
@@ -65,7 +64,7 @@ class Words
     vowels = ["a","e","i","o", "u", "y"]
     vowels_in_word = vowels & word_array
     three_consecutive_letters = word_array.any? {|letter| (letter == (word_array[word_array.index(letter) + 1])) & (letter == (word_array[word_array.index(letter) + 2]))}
-    
+
     (vowels_in_word.length > 0) & !three_consecutive_letters
   end
 

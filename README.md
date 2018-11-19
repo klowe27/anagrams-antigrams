@@ -6,7 +6,7 @@
 
 ## Description
 
-This is a basic program to check if a word or phrase is an anagram or an antigram regardless of case or punctuation. It first does a basic check to see if the word or words in the phrase are in fact words by determining if they contain vowels. It also checks to see if the word or phrase is a palindrome.
+This is a basic program to check if a word or phrase is an anagram or an antigram regardless of case or punctuation. It first does a basic check to see if the word or words in the phrase are in fact words by determining if they contain vowels or three consecutive letters. It also checks to see if the word or phrase is a palindrome.
 
 ## Setup/Installation Requirements
 
