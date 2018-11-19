@@ -25,7 +25,7 @@ describe('Words#anagram') do
 
   it('will account for multiple words being anagrams or antigrams') do
     words = Words.new()
-    expect(words.anagram('Slot machines.', 'Cash lost in me.')).to(eq('Slot machines. and Cash lost in me. are anagrams'))
+    expect(words.anagram('Young lad.', 'An old guy.')).to(eq('Young lad. and An old guy. are anagrams'))
   end
 
 end
