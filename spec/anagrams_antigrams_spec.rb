@@ -3,7 +3,7 @@ require 'anagrams_antigrams'
 
 describe('Words#anagram') do
   words = Words.new()
-  
+
   it('will compare two words and return whether they are anagrams') do
     expect(words.anagram('ruby', 'bury')).to(eq('ruby and bury are anagrams.'))
   end
@@ -26,6 +26,10 @@ describe('Words#anagram') do
 
   it('will check if a phrase is a palindrome') do
     expect(words.anagram('Mad? Am I, Madam?', 'Dam maid mama.')).to(eq('Mad? Am I, Madam? and Dam maid mama. are anagrams. Mad? Am I, Madam? is a palindrome.'))
+  end
+
+  it('will list letters in common for phrases that are not anagrams or antigrams') do
+    expect(words.anagram('This is a sentence.','Present tense.'))to(eq('This is a sentence. and Present tense. are not anagrams or antigrams, but they do have these letters in common: t s s e n t e n e'))
   end
 
 end

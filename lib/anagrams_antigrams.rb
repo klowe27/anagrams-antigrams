@@ -18,7 +18,7 @@ class Words
       elsif letters_in_common.length == 0
         message +="#{phrase_one} and #{phrase_two} have no letter matches and are antigrams."
       else
-        message +="#{phrase_one} and #{phrase_two} are not anagrams or antigrams."
+        message +="#{phrase_one} and #{phrase_two} are not anagrams or antigrams"
       end
 
       if palindrome?(phrase_one_clean) | palindrome?(phrase_two_clean)
