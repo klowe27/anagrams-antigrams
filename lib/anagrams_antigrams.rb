@@ -1,7 +1,6 @@
 require 'pry'
 
 class Words
-
   def anagram(phrase_one, phrase_two)
     phrase_one_words = remove_punctuation(phrase_one)
     phrase_two_words = remove_punctuation(phrase_two)
@@ -10,25 +9,24 @@ class Words
     phrase_two_clean = remove_space(phrase_two_words)
 
     letters_in_common = compare_arrays(phrase_one_clean, phrase_two_clean)
-    message =""
+    message = "#{phrase_one} and #{phrase_two}"
 
     if (phrase_one_words.all? { |word| word?(word)}) & (phrase_two_words.all? { |word| word?(word)})
-      if letters_in_common == phrase_one_clean
-        message += "#{phrase_one} and #{phrase_two} are anagrams."
+      if (letters_in_common == phrase_one_clean) & (phrase_one_clean.length == phrase_two_clean.length)
+        message += " are anagrams."
       elsif letters_in_common.length == 0
-        message +="#{phrase_one} and #{phrase_two} have no letter matches and are antigrams."
+        message +=" have no letter matches and are antigrams."
       else
-        message +="#{phrase_one} and #{phrase_two} are not anagrams or antigrams, but they do have these letters in common: #{letters_in_common.join(' ')}."
+        message +=" are not anagrams or antigrams, but they do have these letters in common: #{letters_in_common.join(' ')}."
       end
 
       if palindrome?(phrase_one_clean) | palindrome?(phrase_two_clean)
-        message += " "
-        message += (palindrome?(phrase_one_clean) ? "#{phrase_one}" : "#{phrase_two}")
+        message += (palindrome?(phrase_one_clean) ? " #{phrase_one}" : " #{phrase_two}")
         message += " is a palindrome."
       end
 
     else
-      message +='You need to input actual words!'
+      message ='You need to input actual words!'
     end
     message
   end
