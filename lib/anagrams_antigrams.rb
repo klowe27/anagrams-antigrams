@@ -19,6 +19,12 @@ class Words
       else
         "#{phrase_one} and #{phrase_two} are not anagrams or antigrams"
       end
+      # 
+      # if palindrome?(phrase_one_clean) | palindrome?(phrase_one_clean)
+      #   message = (palindrome?(phrase_one_clean) ? "#{phrase_one}" : "#{phrase_two}")
+      #   message += " is a palindrome"
+      # end
+
     else
       'You need to input actual words!'
     end
@@ -41,6 +47,10 @@ class Words
     vowels = ["a","e","i","o", "u", "y"]
     vowels_in_word = vowels & word_array
     vowels_in_word.length > 0
+  end
+
+  def palindrome? (word)
+    word == word.reverse()
   end
 
 end
