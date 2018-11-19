@@ -23,4 +23,9 @@ describe('Words#anagram') do
     expect(words.anagram('space', 'blink')).to(eq('space and blink have no letter matches and are antigrams'))
   end
 
+  it('will account for multiple words being anagrams or antigrams') do
+    words = Words.new()
+    expect(words.anagram('Slot machines.', 'Cash lost in me.')).to(eq('Slot machines. and Cash lost in me. are anagrams'))
+  end
+
 end
