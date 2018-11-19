@@ -9,29 +9,45 @@ class Words
     phrase_one_clean = remove_space(phrase_one_words)
     phrase_two_clean = remove_space(phrase_two_words)
 
-    array_compare = phrase_one_clean & phrase_two_clean
+    letters_in_common = compare_arrays(phrase_one_clean, phrase_two_clean)
+    message =""
 
     if (phrase_one_words.all? { |word| word?(word)}) & (phrase_two_words.all? { |word| word?(word)})
-      if array_compare == phrase_one_clean
-        "#{phrase_one} and #{phrase_two} are anagrams"
-      elsif array_compare.length == 0
-        "#{phrase_one} and #{phrase_two} have no letter matches and are antigrams"
+      if letters_in_common == phrase_one_clean
+        message += "#{phrase_one} and #{phrase_two} are anagrams."
+      elsif letters_in_common.length == 0
+        message +="#{phrase_one} and #{phrase_two} have no letter matches and are antigrams."
       else
-        "#{phrase_one} and #{phrase_two} are not anagrams or antigrams"
+        message +="#{phrase_one} and #{phrase_two} are not anagrams or antigrams."
       end
-      # 
-      # if palindrome?(phrase_one_clean) | palindrome?(phrase_one_clean)
-      #   message = (palindrome?(phrase_one_clean) ? "#{phrase_one}" : "#{phrase_two}")
-      #   message += " is a palindrome"
-      # end
+
+      if palindrome?(phrase_one_clean) | palindrome?(phrase_two_clean)
+        message += " "
+        message += (palindrome?(phrase_one_clean) ? "#{phrase_one}" : "#{phrase_two}")
+        message += " is a palindrome."
+      end
 
     else
-      'You need to input actual words!'
+      message +='You need to input actual words!'
     end
+    message
+  end
+
+  def compare_arrays(array_one, array_two)
+    letters_in_common = []
+    one = array_one.dup
+    two = array_two.dup
+    one.each do |letter|
+      if two.include?(letter)
+        letters_in_common.push(letter)
+        two.slice!(two.index(letter))
+      end
+    end
+    letters_in_common
   end
 
   def remove_punctuation(phrase)
-    punctuation = [".","\,","!","\;",":","-","\(","\)","\'","\"","...", "\{","\}","\[","\]"]
+    punctuation = [".","\,","!","\;",":","-","\(","\)","\'","\"","...", "\{","\}","\[","\]","?"]
     phrase_array = phrase.split("")
     phrase_without_punctuation = phrase_array.reject{ |letter| punctuation.include?(letter)}
     phrase_without_punctuation.join.split(" ")
