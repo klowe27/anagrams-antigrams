@@ -29,7 +29,7 @@ describe('Words#anagram') do
   end
 
   it('will list letters in common for phrases that are not anagrams or antigrams') do
-    expect(words.anagram('This is a sentence.','Present tense.'))to(eq('This is a sentence. and Present tense. are not anagrams or antigrams, but they do have these letters in common: t s s e n t e n e'))
+    expect(words.anagram('This is a sentence.','Present tense.')).to(eq('This is a sentence. and Present tense. are not anagrams or antigrams, but they do have these letters in common: t s s e n t e n e.'))
   end
 
 end
