@@ -64,7 +64,9 @@ class Words
     word_array = word.downcase.split("")
     vowels = ["a","e","i","o", "u", "y"]
     vowels_in_word = vowels & word_array
-    vowels_in_word.length > 0
+    three_consecutive_letters = word_array.any? {|letter| (letter == (word_array[word_array.index(letter) + 1])) & (letter == (word_array[word_array.index(letter) + 2]))}
+    
+    (vowels_in_word.length > 0) & !three_consecutive_letters
   end
 
   def palindrome? (word)
