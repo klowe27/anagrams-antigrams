@@ -1,28 +1,27 @@
-# _{Application Name}_
+# Anagrams and Antigrams
 
-#### _{Description, Date}_
+#### Anagram and Antigram Checker, 11.19.18
 
-#### By _**{People}**_
+#### By Kristin Brewer-Lowe
 
 ## Description
 
-_{Detailed description of app}_
+Basic program to check if a word or phrase is an anagram or an antigram regardless of case or punctuation. It first does a basic check to see if the word or words in the phrase are in fact words by determining if they contain vowels.
 
 ## Setup/Installation Requirements
 
-* _Instructions_
-* _go_
-* _here_
+* Clone the project in the command line using $ git clone https://github.com/klowe27/anagrams-antigrams
+* Navigate into the directory and run rspec in the command line
 
 ## Known Bugs
 
-_{Bugs go here}_
+There are no known bugs at this time.
 
 ## Support and Contact Details
 
-_{Text here}_
+If you have questions or encounter issues, please email kristin.lowe1@gmail.com. Or, feel free to contribute to the code.
 
 ### License
 
-Licensed under {License here}
-Copyright (c) {year} _**{Names/Initials}**_
+Licensed under the MIT license.
+Copyright (c) 2018 Kristin Brewer-Lowe
