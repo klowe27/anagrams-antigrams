@@ -38,4 +38,10 @@ describe('Words#anagram') do
     expect(words.anagram('Present tense.')).to(eq('This is a sentence. and Present tense. are not anagrams or antigrams, but 9 letters match: t, s, s, e, n, t, e, n, e.'))
   end
 
+  it('will determine if inputs are words by checking to see if they containe the same letter three consecutive times') do
+    words = Words.new('bookkeeper')
+    expect(words.anagram('boookeeper')).to(eq('You need to input actual words!'))
+  end
+
+
 end
