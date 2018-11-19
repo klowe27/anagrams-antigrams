@@ -24,5 +24,6 @@ If you have questions or encounter issues, please email kristin.lowe1@gmail.com.
 
 ### License
 
-Licensed under the MIT license.
-Copyright (c) 2018 Kristin Brewer-Lowe
+*Licensed under the MIT license.*
+
+Copyright (c) 2018 **Kristin Brewer-Lowe**
