@@ -1,7 +1,8 @@
 require 'rspec'
 require 'anagrams_antigrams'
 
-describe('Words#anagrams') do
+describe('Words#anagram') do
+
   it('will compare two words and return whether they are anagrams') do
     words = Words.new()
     expect(words.anagram('ruby', 'bury')).to(eq('ruby and bury are anagrams'))
