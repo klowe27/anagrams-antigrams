@@ -18,4 +18,9 @@ describe('Words#anagram') do
     expect(words.anagram('brwn', 'rnbw')).to(eq('You need to input actual words!'))
   end
 
+  it('will determine if a word is an atigram') do
+    words = Words.new()
+    expect(words.anagram('space', 'blink')).to(eq('space and blink have no letter matches and are antigrams'))
+  end
+
 end
